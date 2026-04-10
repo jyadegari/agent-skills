@@ -1,0 +1,19 @@
+{
+  "name": "jyadegari-agent-skills",
+  "owner": {
+    "name": "Javad Yadegari"
+  },
+  "metadata": {
+    "description": "Engineering skills for AI coding agents — code review, TDD, and debugging, tailored for Java Spring and TypeScript React."
+  },
+  "plugins": [
+    {
+      "name": "agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "jyadegari/agent-skills"
+      },
+      "description": "Core engineering skills for Java Spring and TypeScript React: code review, TDD, and debugging."
+    }
+  ]
+}
