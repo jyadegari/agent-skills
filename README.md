@@ -24,6 +24,30 @@ Plus a meta-skill (`using-agent-skills`) injected automatically at session start
 
 ## Install
 
+### Any Agent (Recommended)
+
+Works with Claude Code, Cursor, Copilot, Windsurf, Gemini CLI, and OpenCode:
+
+```bash
+npx skills add jyadegari/agent-skills
+```
+
+Install a specific skill only:
+
+```bash
+npx skills add jyadegari/agent-skills --skill code-review
+npx skills add jyadegari/agent-skills --skill test-driven-development
+npx skills add jyadegari/agent-skills --skill debugging
+```
+
+See all available skills before installing:
+
+```bash
+npx skills add jyadegari/agent-skills --list
+```
+
+---
+
 ### Claude Code (Marketplace)
 
 ```
@@ -38,14 +62,16 @@ git clone https://github.com/jyadegari/agent-skills.git
 claude --plugin-dir /path/to/agent-skills
 ```
 
-### Other Agents
+### Cursor
 
-**Cursor:** Copy skill files into `.cursor/rules/`:
+Copy skill files into `.cursor/rules/`:
 ```bash
 cp skills/*/SKILL.md .cursor/rules/
 ```
 
-**OpenCode / Windsurf / Copilot:** See [AGENTS.md](./AGENTS.md) for integration guidance.
+### Other Agents (Windsurf, Copilot, OpenCode)
+
+See [AGENTS.md](./AGENTS.md) for integration guidance.
 
 ---
 
