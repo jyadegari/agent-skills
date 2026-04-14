@@ -24,6 +24,18 @@ Plus a meta-skill (`using-agent-skills`) injected automatically at session start
 
 ## Install
 
+Different installation methods give you different capabilities. The table below shows what each method includes:
+
+| Method | Skills (SKILL.md) | Slash commands (`/review`, `/tdd`, `/debug`, `/karpathy`) |
+|--------|:-----------------:|:---------------------------------------------------------:|
+| `npx skills add` | Yes | No |
+| Claude Code Marketplace (`/plugin install`) | Yes | Yes |
+| Claude Code local (`--plugin-dir`) | Yes | Yes |
+| Cursor (manual copy) | Yes | No — Cursor has no slash command system |
+| Windsurf / Copilot / OpenCode | Yes | No — these agents have no slash command system |
+
+---
+
 ### Any Agent (Recommended)
 
 Works with Claude Code, Cursor, Copilot, Windsurf, Gemini CLI, and OpenCode:
@@ -32,18 +44,28 @@ Works with Claude Code, Cursor, Copilot, Windsurf, Gemini CLI, and OpenCode:
 npx skills add jyadegari/agent-skills
 ```
 
+**What you get:** Skill files are copied into your project so the agent can read and apply them. Slash commands are **not** included — invoke skills by name in your prompt instead (e.g. "apply the code-review skill").
+
 Install a specific skill only:
 
 ```bash
 npx skills add jyadegari/agent-skills --skill code-review
 npx skills add jyadegari/agent-skills --skill test-driven-development
 npx skills add jyadegari/agent-skills --skill debugging
+npx skills add jyadegari/agent-skills --skill andrej-karpathy-skills
 ```
 
 See all available skills before installing:
 
 ```bash
 npx skills add jyadegari/agent-skills --list
+```
+
+**Optional: add slash commands globally**
+If you use Claude Code and want `/review`, `/tdd`, `/debug`, and `/karpathy` available in every project, copy the commands to your global Claude directory after installing:
+
+```bash
+cp node_modules/jyadegari-agent-skills/.claude/commands/*.md ~/.claude/commands/
 ```
 
 ---
@@ -55,12 +77,26 @@ npx skills add jyadegari/agent-skills --list
 /plugin install agent-skills@jyadegari-agent-skills
 ```
 
+**What you get:** Skills and slash commands are both registered automatically in your current project. `/review`, `/tdd`, `/debug`, and `/karpathy` are available immediately.
+
+---
+
 ### Claude Code (Local)
 
 ```bash
 git clone https://github.com/jyadegari/agent-skills.git
 claude --plugin-dir /path/to/agent-skills
 ```
+
+**What you get:** Claude Code reads the plugin directory directly — skills and slash commands are both available in every session launched with that flag.
+
+To make the commands available in all projects without the flag, copy them globally:
+
+```bash
+cp /path/to/agent-skills/.claude/commands/*.md ~/.claude/commands/
+```
+
+---
 
 ### Cursor
 
@@ -69,9 +105,15 @@ Copy skill files into `.cursor/rules/`:
 cp skills/*/SKILL.md .cursor/rules/
 ```
 
+**What you get:** Skill content is loaded as Cursor rules. Cursor has no slash command system — invoke skills by referencing the skill name in your prompt (e.g. "@code-review skill").
+
+---
+
 ### Other Agents (Windsurf, Copilot, OpenCode)
 
 See [AGENTS.md](./AGENTS.md) for integration guidance.
+
+**What you get:** Skill files only. Invoke skills by name in your prompt. None of these agents support slash commands from external packages.
 
 ---
 
