@@ -22,6 +22,9 @@ Task arrives
     +-- Something broke? Unexpected behavior? An error?  --> debugging
     |   Build failing? Tests failing unexpectedly?
     |
+    +-- Need coding discipline before starting any task? -> andrej-karpathy-skills
+    |   (think before coding, simplicity, surgical edits)
+    |
     +-- None of these? -----------------------------------> apply general engineering judgment
 ```
 
@@ -32,6 +35,7 @@ Task arrives
 | `code-review` | Before merging any code change | Structured review with Critical/Important/Suggestion findings |
 | `test-driven-development` | Before writing any implementation code | Failing tests, then minimal passing code, then refactor |
 | `debugging` | When something is broken or behaving unexpectedly | Reproduction case, root cause, fix, and guard test |
+| `andrej-karpathy-skills` | Before any coding task to enforce discipline | Verified plan with stated assumptions, minimal scope, and success criteria |
 
 ## Core Operating Behaviors
 

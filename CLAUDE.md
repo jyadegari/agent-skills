@@ -22,6 +22,7 @@ references/      Supplementary checklists and reference material
 | `skills/code-review/` | code-review | Review |
 | `skills/test-driven-development/` | test-driven-development | Build |
 | `skills/debugging/` | debugging | Debug |
+| `skills/andrej-karpathy-skills/` | andrej-karpathy-skills | Discipline |
 
 ## Conventions
 

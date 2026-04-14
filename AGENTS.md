@@ -6,13 +6,14 @@ This file is read by AI coding agents (Claude Code, OpenCode, Cursor, Copilot) t
 
 This repository contains engineering skills for AI coding agents. Each skill is a structured workflow that tells the agent how to approach a specific category of task.
 
-**Three skills are available:**
+**Four skills are available:**
 
 | Skill | When to invoke | Slash command |
 |-------|---------------|---------------|
 | `code-review` | Reviewing any code change, PR, or diff | `/review` |
 | `test-driven-development` | Writing new code or fixing a bug | `/tdd` |
 | `debugging` | Something is broken or behaving unexpectedly | `/debug` |
+| `andrej-karpathy-skills` | Applying Karpathy's coding discipline before any task | — |
 
 ## Intent-to-Skill Mapping
 
@@ -24,6 +25,7 @@ When the user's intent matches a skill, you MUST invoke that skill before procee
 | "Add a feature", "Implement X", "Write a function for Y" | `test-driven-development` |
 | "Fix this bug", "Why is this failing?", "This test is broken" | `debugging` |
 | "Write tests for", "Add test coverage" | `test-driven-development` |
+| "Apply Karpathy's guidelines", "Follow coding discipline", "Keep it simple" | `andrej-karpathy-skills` |
 
 ## Core Rules
 
